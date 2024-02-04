@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
 class ContadorClicks(valorContador: Int): ViewModel() {
+
     private val _cuentaClicks = MutableLiveData<Int>(valorContador)
     val cuentaClicks: LiveData<Int> = _cuentaClicks
 

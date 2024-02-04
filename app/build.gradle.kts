@@ -41,10 +41,13 @@ android {
 
 dependencies {
     val activity_version = "1.8.2"
+    val fragment_version = "1.6.2"
+    //para poder utilizar la libreria viewModel en fragments y activitys.
+    // Kotlin
+    implementation("androidx.fragment:fragment-ktx:$fragment_version")
+
     // Kotlin
     implementation("androidx.activity:activity-ktx:$activity_version")
-
-
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
