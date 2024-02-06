@@ -6,5 +6,6 @@ import androidx.activity.viewModels
 import com.mpd.pmdm.mvvm.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(R.layout.activity_main)
+
 //muestrame este layaout y olvidate
 //Lo fragmentos llevan la cargad de trabajo

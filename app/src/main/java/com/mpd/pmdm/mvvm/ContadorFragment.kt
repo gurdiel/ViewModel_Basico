@@ -29,14 +29,19 @@ class ContadorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.contadoBind = contador
+        binding.lifecycleOwner = viewLifecycleOwner
         //una vez creadas las vistas,
         // mantenemos el contador al día.
         //diferencia del observe en el main activity que cambia en un framento?
         //el primer parametro ya no es el this porque el framento no es el dueño
         //en un framento. le pasamos una varibale del framento.
-        contador.cuentaClicks.observe(viewLifecycleOwner){
-            actualizaContador()
-        }
+
+        /**Quitamos este observer al meter el LiveData*/
+        //contador.cuentaClicks.observe(viewLifecycleOwner){
+        //    actualizaContador()
+        //}
         //cada vez que haya un cambio se le llama a actualiza contador.
     }
 
