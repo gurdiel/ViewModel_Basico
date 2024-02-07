@@ -13,6 +13,8 @@ class BotonesFragment : Fragment() {
     private var _binding: FragmentBotonesBinding? = null
     private val binding get() = _binding!!
 
+
+
     // como hacemos referencia al viewModel
     //No son dos instancias, no se porqué pero no se crean dos instancias.
     private val contador:ContadorClicks by activityViewModels {
@@ -30,12 +32,14 @@ class BotonesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnIncrementa.setOnClickListener {
+        binding.contadorBindingFunciones = contador
+        binding.lifecycleOwner = viewLifecycleOwner
+        /*binding.btnIncrementa.setOnClickListener {
             contador.incrementa()
         }
         binding.btnResta.setOnClickListener {
             contador.decrementa()
-        }
+        }*/
     }
 
     override fun onDestroy() {

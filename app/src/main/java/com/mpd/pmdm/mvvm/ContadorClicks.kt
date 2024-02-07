@@ -5,13 +5,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class ContadorClicks(valorContador: Int): ViewModel() {
+class ContadorClicks(valorContador: Int) : ViewModel() {
 
     private val _cuentaClicks = MutableLiveData<Int>(valorContador)
     val cuentaClicks: LiveData<Int> = _cuentaClicks
 
+    var nombre = MutableLiveData<String>("")
+
+
     fun incrementa() {
         _cuentaClicks.value = cuentaClicks.value?.plus(1)
+        nombre.value = nombre.value.plus(" el incrementador.")
+
     }
 
     fun decrementa() {
@@ -19,8 +24,7 @@ class ContadorClicks(valorContador: Int): ViewModel() {
     }
 }
 
-class ContadorClickFactory(val valor: Int): ViewModelProvider.Factory{
-
+class ContadorClickFactory(val valor: Int) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return ContadorClicks(valor) as T
     }
